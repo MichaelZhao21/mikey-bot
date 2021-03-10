@@ -1,0 +1,18 @@
+{
+  "name": "mikey-bot",
+  "version": "1.0.0",
+  "description": "A personal discord bot",
+  "main": "app.js",
+  "author": "Michael Zhao <michaelzhao314@gmail.com> (https://michaelzhao.xyz)",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "fs": "^0.0.1-security",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7"
+  }
+}
