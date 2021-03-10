@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "dependencies": {
     "discord.js": "^12.5.1",
@@ -15,5 +16,8 @@
     "fs": "^0.0.1-security",
     "node-fetch": "^2.6.1",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
