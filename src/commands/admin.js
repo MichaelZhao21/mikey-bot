@@ -1,4 +1,5 @@
-const { Message } = require("discord.js");
+const { Message } = require('discord.js');
+const { sendHelpMessage } = require('./help');
 
 /**
  * Admin commands
@@ -6,6 +7,8 @@ const { Message } = require("discord.js");
  * @param {string[]} args Argument list
  * @param {Client} client The Discordjs client object
  */
-module.exports = async (message, args, client) => {
-    
+async function run(message, args, client) {
+    if (args.length === 0) sendHelpMessage('admin', message, 'No admin command specified...');
 }
+
+module.exports = { run };

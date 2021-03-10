@@ -23,10 +23,10 @@ client.on('message', async (message) => {
     // Switch to determine command to use
     switch (args[0]) {
         case 'help':
-            help(message, args, client);
+            help.run(message, args, client);
             break;
         case 'admin':
-            admin(message, args, client);
+            admin.run(message, args, client);
             break;
         default:
             break;
