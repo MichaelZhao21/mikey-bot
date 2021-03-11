@@ -4,6 +4,10 @@
         "admin - admin commands (only for admins!)"
     ],
     "admin": [
-        "eradicate - deletes all messages in the current text channel"
+        "admin eradicate - deletes all messages in the current text channel"
+    ],
+    "links": [
+        "links - show the list of all links",
+        "links <link name> - get a list of all links"
     ]
 }

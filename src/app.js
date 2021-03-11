@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
-const admin = require('./commands/admin');
-const help = require('./commands/help');
+const Admin = require('./commands/admin');
+const Help = require('./commands/help');
+const Links = require('./commands/links');
 const config = require('./config');
 
 // Create client object
@@ -23,11 +24,13 @@ client.on('message', async (message) => {
     // Switch to determine command to use
     switch (args[0]) {
         case 'help':
-            help.run(message, args, client);
+            Help.run(message, args, client);
             break;
         case 'admin':
-            admin.run(message, args, client);
+            Admin.run(message, args, client);
             break;
+        case 'links':
+            Links.run(message, args, client);
         default:
             break;
     }

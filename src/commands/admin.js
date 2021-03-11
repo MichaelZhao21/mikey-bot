@@ -3,6 +3,7 @@ const { sendHelpMessage } = require('./help');
 
 /**
  * Admin commands
+ * 
  * @param {Message} message Discordjs message object
  * @param {string[]} args Argument list
  * @param {Client} client The Discordjs client object
