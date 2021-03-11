@@ -1,7 +1,8 @@
 {
     "default": [
         "help - this help message",
-        "admin - admin commands (only for admins!)"
+        "admin - admin commands (only for admins!)",
+        "links - some useful links"
     ],
     "admin": [
         "admin eradicate - deletes all messages in the current text channel"
