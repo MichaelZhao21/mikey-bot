@@ -32,6 +32,7 @@ client.on('message', async (message) => {
         case 'links':
             Links.run(message, args, client);
         default:
+            Help.sendHelpMessage('default', message, 'Invalid command!');
             break;
     }
 });
