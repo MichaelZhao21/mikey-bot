@@ -1,5 +1,6 @@
 {
     "flexbox": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
     "grid": "https://css-tricks.com/snippets/css/complete-guide-grid/",
-    "discord-colors": "https://www.online-tech-tips.com/software-reviews/how-to-add-color-to-messages-on-discord/"
+    "discord-colors": "https://www.online-tech-tips.com/software-reviews/how-to-add-color-to-messages-on-discord/",
+    "emojis": "https://api.github.com/emojis"
 }
