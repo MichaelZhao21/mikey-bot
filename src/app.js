@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const Admin = require('./commands/admin');
 const Help = require('./commands/help');
 const Links = require('./commands/links');
+const Talk = require('./commands/talk');
 const config = require('./config');
 
 // Create client object
@@ -31,6 +32,9 @@ client.on('message', async (message) => {
             break;
         case 'links':
             Links.run(message, args, client);
+            break;
+        case `~`:
+            Talk.run(message, args, client);
             break;
         default:
             Help.sendHelpMessage('default', message, 'Invalid command!');
