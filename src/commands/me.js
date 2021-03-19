@@ -11,24 +11,20 @@ const { randInt } = require('../util');
  * @param {Client} client The Discordjs client object
  */
 async function run(message, args, client) {
-    if (args.length < 1) {
-        message.channel.send(
-            `No message specified. Here is a list of things you can say:\n\`\`\`
-            ${Object.keys(responses).join(', ')}
-            \n\`\`\``
-        );
+    const resList = Object.keys(responses).join(', ');
+    if (args.length === 1) {
+        message.channel.send(`Here is a list of things you can say:\n\`\`\`${resList}\n\`\`\``);
         return;
     }
 
     const query = args[1].toLowerCase();
+
     if (!Object.keys(responses).includes(query)) {
         message.channel.send(
-            `I cannot answer that :(\nBUT you can say these things to me:\n\`\`\`
-            ${Object.keys(responses).join(', ')}
-            \n\`\`\``
+            `I cannot answer that :pensive:\nYou can say these things to me:\n\`\`\`${resList}\n\`\`\``
         );
     } else {
-        const index = randInt(0, responses[query].length);
+        const index = randInt(0, responses[query].length - 1);
         message.channel.send(responses[query][index]);
     }
 }

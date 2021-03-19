@@ -2,7 +2,8 @@
     "default": [
         "help - this help message",
         "admin - admin commands (only for admins!)",
-        "links - some useful links"
+        "links - some useful links",
+        "me - talk to the bot!"
     ],
     "admin": [
         "admin eradicate - deletes all messages in the current text channel"
@@ -10,5 +11,9 @@
     "links": [
         "links - show the list of all links",
         "links <link name> - get a list of all links"
+    ],
+    "me": [
+        "me - get a list of things you can say to the bot",
+        "me <query> - talk to the bot"
     ]
 }
