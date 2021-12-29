@@ -1,7 +1,7 @@
 require('dotenv').config();
 const fs = require('fs');
 const { Client, Intents, Collection, Message, MessageEmbed } = require('discord.js');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
 // Create client object
 const client = new Client({
@@ -22,22 +22,22 @@ client.on('ready', () => console.log(`Ready! Logged in as ${client.user.tag}`));
 // Login using bot token
 client.login(process.env.TOKEN);
 
-// Connect mongoose to server
-const mongoURL = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@${process.env.MONGO_URL}/data?retryWrites=true&w=majority`;
-mongoose.connect(mongoURL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+// // Connect mongoose to server
+// const mongoURL = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@${process.env.MONGO_URL}/data?retryWrites=true&w=majority`;
+// mongoose.connect(mongoURL, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+// });
 
-// Callbacks for db connections
-const db = mongoose.connection;
-db.on('error', (error) => {
-    console.error(error);
-    process.exit(1);
-});
-db.once('open', async () => {
-    console.log('Connected to mongodb database!');
-});
+// // Callbacks for db connections
+// const db = mongoose.connection;
+// db.on('error', (error) => {
+//     console.error(error);
+//     process.exit(1);
+// });
+// db.once('open', async () => {
+//     console.log('Connected to mongodb database!');
+// });
 
 // Listen for messages
 client.on('messageCreate', async (message) => {
