@@ -7,8 +7,10 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
  * @param {CommandInteraction} interaction Discord interaction object
  */
 async function addRec(interaction) {
-    const description = interaction.options.get('description').value;
-    const comments = interaction.options.get('comments').value;
+    const descriptionInt = interaction.options.get('description');
+    const description = descriptionInt ? descriptionInt.value : null;
+    const commentsInt = interaction.options.get('comments');
+    const comments = commentsInt ? commentsInt.value : null;
 
     const embed = new MessageEmbed()
         .setColor('#d3c202')
