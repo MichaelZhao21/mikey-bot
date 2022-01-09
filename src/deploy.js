@@ -20,7 +20,6 @@ const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
 const argv = process.argv.slice(2);
 
 // If the guild ID is NOT present, run the global-level deploy (this will take up to an hour to propogate and is for production deploy)
-// This will also remove all previously added commands
 if (argv.length === 0) {
     rest.put(Routes.applicationCommands(process.env.CLIENT_ID), { body: commands })
         .then(() =>
@@ -33,6 +32,6 @@ if (argv.length === 0) {
 }
 
 // Otherwise, run the guild-level deploy (this is instantaneous and good for testing)
-rest.put(Routes.applicationGuildCommands(process.env.CLIENT_ID, process.argv.slice(2)), { body: commands })
+rest.put(Routes.applicationGuildCommands(process.env.CLIENT_ID, argv[0]), { body: commands })
     .then(() => console.log('Successfully registered application commands.'))
     .catch(console.error);

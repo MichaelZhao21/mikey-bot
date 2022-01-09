@@ -1,4 +1,3 @@
-
 require('dotenv').config();
 const { Client, Intents } = require('discord.js');
 
@@ -13,13 +12,14 @@ const client = new Client({
 
 const argv = process.argv.slice(2);
 
-// Clear all global commands
 client.on('ready', () => {
     if (argv.length === 0) {
+        // Clear all global commands
         client.application.commands.set([]);
         console.log(`Removed all commands GLOBALLY for ${client.user.username}`);
     }
     else {
+        // Get guild to clear guild-level commands
         const guildId = argv[0];
         const guild = client.guilds.cache.find(guild => guild.id === guildId);
         if (guild) {
