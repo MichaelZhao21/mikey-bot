@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "deploy": "node src/deploy.js"
+    "deploy": "node src/deploy.js",
+    "clean": "node src/clean.js"
   },
   "dependencies": {
     "@discordjs/builders": "^0.10.0",
