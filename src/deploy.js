@@ -28,10 +28,9 @@ if (argv.length === 0) {
             )
         )
         .catch(console.error);
-    return;
+} else {
+    // Otherwise, run the guild-level deploy (this is instantaneous and good for testing)
+    rest.put(Routes.applicationGuildCommands(process.env.CLIENT_ID, argv[0]), { body: commands })
+        .then(() => console.log('Successfully registered application commands.'))
+        .catch(console.error);
 }
-
-// Otherwise, run the guild-level deploy (this is instantaneous and good for testing)
-rest.put(Routes.applicationGuildCommands(process.env.CLIENT_ID, argv[0]), { body: commands })
-    .then(() => console.log('Successfully registered application commands.'))
-    .catch(console.error);
